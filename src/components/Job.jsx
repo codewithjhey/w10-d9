@@ -24,7 +24,7 @@ const Job = ({ data }) => {
           variant="danger"
           onClick={() => {
             dispatch({
-              type: "ADD_TO_COMPANIES",
+              type: "ADD_COMPANIES",
               payload: data
             })
           }}

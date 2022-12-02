@@ -26,7 +26,7 @@ const Favourites = () => {
             variant="danger"
             onClick={() => {
               dispatch({
-                type: "REMOVE_FROM_COMPANIES",
+                type: "REMOVE_COMPANIES",
                 payload: jobs
               })
             }}

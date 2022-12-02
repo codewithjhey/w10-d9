@@ -6,7 +6,7 @@ const initialState = {
 
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_TO_COMPANIES":
+    case "ADD_COMPANIES":
       return {
         ...state,
         favourites: {
@@ -15,7 +15,7 @@ const mainReducer = (state = initialState, action) => {
         }
       }
 
-    case "REMOVE_FROM_COMPANIES":
+    case "REMOVE_COMPANIES":
       return {
         ...state,
         favourites: {
