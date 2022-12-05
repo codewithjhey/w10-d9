@@ -6,7 +6,6 @@ import { getJobsAction } from "../redux/actions"
 
 const MainSearch = () => {
   const [query, setQuery] = useState("")
-
   const jobTray = useSelector((state) => state.jobs.jobTray)
 
   const dispatch = useDispatch()
