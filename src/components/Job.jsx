@@ -21,7 +21,7 @@ const Job = ({ data }) => {
       </Col>
       <Col xs={2}>
         <Button
-          variant="danger"
+          variant="success"
           onClick={() => {
             dispatch({
               type: "ADD_COMPANIES",

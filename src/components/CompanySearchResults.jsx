@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import Job from './Job'
-import { useParams } from 'react-router-dom'
+import { useEffect, useState } from "react"
+import { Container, Row, Col } from "react-bootstrap"
+import Job from "./Job"
+import { useParams } from "react-router-dom"
 
 const CompanySearchResults = () => {
   const [jobs, setJobs] = useState([])
   const params = useParams()
 
-  const baseEndpoint = 'https://strive-jobs-api.herokuapp.com/jobs?company='
+  const baseEndpoint = "https://strive-jobs-api.herokuapp.com/jobs?company="
 
   useEffect(() => {
     getJobs()
@@ -20,7 +20,7 @@ const CompanySearchResults = () => {
         const { data } = await response.json()
         setJobs(data)
       } else {
-        alert('Error fetching results')
+        alert("Error fetching results")
       }
     } catch (error) {
       console.log(error)

@@ -1,31 +1,25 @@
+import { ADD_COMPANIES, REMOVE_COMPANIES } from "../actions"
+
 const initialState = {
-  favourites: {
-    companies: []
-  }
+  companies: []
 }
 
-const mainReducer = (state = initialState, action) => {
+const favoritesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_COMPANIES":
+    case ADD_COMPANIES:
       return {
         ...state,
-        favourites: {
-          ...state.favourites,
-          companies: [...state.favourites.companies, action.payload]
-        }
+        companies: [...state.companies, action.payload]
       }
 
-    case "REMOVE_COMPANIES":
+    case REMOVE_COMPANIES:
       return {
         ...state,
-        favourites: {
-          ...state.favourites,
-          companies: [
-            ...state.favourites.companies.filter(
-              (jobs) => jobs._id !== action.payload._id
-            )
-          ]
-        }
+        companies: [
+          ...state.companies.filter((jobs) => {
+            return jobs._id !== action.payload._id
+          })
+        ]
       }
 
     default:
@@ -33,4 +27,4 @@ const mainReducer = (state = initialState, action) => {
   }
 }
 
-export default mainReducer
+export default favoritesReducer
