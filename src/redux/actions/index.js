@@ -41,6 +41,10 @@ export const getJobsAction = (query) => {
             payload: false
           })
         }, 500)
+        dispatch({
+          type: GET_JOBS_ERROR,
+          payload: false
+        })
       } else {
         alert("Error fetching results")
 

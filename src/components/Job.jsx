@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button, Spinner, Alert } from "react-bootstrap"
+import { Container, Row, Col, Button, Alert } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { MdFavorite } from "react-icons/md"
@@ -11,7 +11,7 @@ const Job = ({ data }) => {
   return (
     <Container>
       {areJobsError ? (
-        <Col xs={12}>
+        <Col xs={12} className="mt-3">
           <Alert variant="danger" className="text-center">
             <h1> Whoopsie, something went wrong 🥲</h1>
           </Alert>

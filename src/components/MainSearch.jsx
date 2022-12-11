@@ -7,12 +7,13 @@ import { getJobsAction } from "../redux/actions"
 const MainSearch = () => {
   const [query, setQuery] = useState("")
   const jobTray = useSelector((state) => state.jobs.jobTray)
+  const areJobsLoading = useSelector((state) => state.jobs.isLoading)
 
   const dispatch = useDispatch()
 
   useEffect(() => {
-    getJobsAction()
-  }, [])
+    getJobsAction(jobTray)
+  }, [jobTray])
 
   const handleChange = (e) => {
     setQuery(e.target.value)
@@ -22,8 +23,6 @@ const MainSearch = () => {
     e.preventDefault()
     await dispatch(getJobsAction(query))
   }
-
-  const areJobsLoading = useSelector((state) => state.jobs.isLoading)
 
   return (
     <Container>
